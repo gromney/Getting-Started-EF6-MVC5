@@ -31,6 +31,7 @@ namespace ContosoUniversity.Controllers
                 searchString = currentFilter;
             }
             ViewBag.CurrentFilter = searchString;
+
             var students = from s in db.Students
                            select s;
             if (!String.IsNullOrEmpty(searchString))
@@ -55,7 +56,9 @@ namespace ContosoUniversity.Controllers
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
-            return View(students.ToList());
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(students.ToPagedList(pageNumber,pageSize));
         }
 
         // GET: Student/Details/5
