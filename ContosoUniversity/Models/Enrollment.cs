@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ContosoUniversity.Models
+﻿namespace ContosoUniversity.Models
 {
-    enum Grade
+    public enum Grade
     {
-        A,B,C,D,F
+        A, B, C, D, F
     }
+
     public class Enrollment
     {
         public int EnrollmentId { get; set; }
