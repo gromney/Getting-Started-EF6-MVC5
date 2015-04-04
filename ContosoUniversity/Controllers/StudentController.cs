@@ -22,10 +22,9 @@ namespace ContosoUniversity.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var students = from s in db.Students
                            select s;
-
             switch (sortOrder)
             {
-                case  "name_desc":
+                case "name_desc":
                     students = students.OrderByDescending(s => s.LastName);
                     break;
                 case "Date":
@@ -35,9 +34,10 @@ namespace ContosoUniversity.Controllers
                     students = students.OrderByDescending(s => s.EnrollmentDate);
                     break;
                 default:
+                    students = students.OrderBy(s => s.LastName);
                     break;
             }
-            return View(db.Students.ToList());
+            return View(students.ToList());
         }
 
         // GET: Student/Details/5
