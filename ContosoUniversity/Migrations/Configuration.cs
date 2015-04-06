@@ -54,56 +54,56 @@ namespace ContosoUniversity.Migrations
             var enrollments = new List<Enrollment>
             {
                 new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Alexander").Id, 
+                    StudentId = students.Single(s => s.LastName == "Alexander").ID, 
                     CourseId = courses.Single(c => c.Title == "Chemistry" ).CourseId, 
                     Grade = Grade.A 
                 },
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Alexander").Id,
+                    StudentId = students.Single(s => s.LastName == "Alexander").ID,
                     CourseId = courses.Single(c => c.Title == "Microeconomics" ).CourseId, 
                     Grade = Grade.C 
                  },                            
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Alexander").Id,
+                    StudentId = students.Single(s => s.LastName == "Alexander").ID,
                     CourseId = courses.Single(c => c.Title == "Macroeconomics" ).CourseId, 
                     Grade = Grade.B
                  },
                  new Enrollment { 
-                     StudentId = students.Single(s => s.LastName == "Alonso").Id,
+                     StudentId = students.Single(s => s.LastName == "Alonso").ID,
                     CourseId = courses.Single(c => c.Title == "Calculus" ).CourseId, 
                     Grade = Grade.B 
                  },
                  new Enrollment { 
-                     StudentId = students.Single(s => s.LastName == "Alonso").Id,
+                     StudentId = students.Single(s => s.LastName == "Alonso").ID,
                     CourseId = courses.Single(c => c.Title == "Trigonometry" ).CourseId, 
                     Grade = Grade.B 
                  },
                  new Enrollment {
-                    StudentId = students.Single(s => s.LastName == "Alonso").Id,
+                    StudentId = students.Single(s => s.LastName == "Alonso").ID,
                     CourseId = courses.Single(c => c.Title == "Composition" ).CourseId, 
                     Grade = Grade.B 
                  },
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Anand").Id,
+                    StudentId = students.Single(s => s.LastName == "Anand").ID,
                     CourseId = courses.Single(c => c.Title == "Chemistry" ).CourseId
                  },
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Anand").Id,
+                    StudentId = students.Single(s => s.LastName == "Anand").ID,
                     CourseId = courses.Single(c => c.Title == "Microeconomics").CourseId,
                     Grade = Grade.B         
                  },
                 new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Barzdukas").Id,
+                    StudentId = students.Single(s => s.LastName == "Barzdukas").ID,
                     CourseId = courses.Single(c => c.Title == "Chemistry").CourseId,
                     Grade = Grade.B         
                  },
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Li").Id,
+                    StudentId = students.Single(s => s.LastName == "Li").ID,
                     CourseId = courses.Single(c => c.Title == "Composition").CourseId,
                     Grade = Grade.B         
                  },
                  new Enrollment { 
-                    StudentId = students.Single(s => s.LastName == "Justice").Id,
+                    StudentId = students.Single(s => s.LastName == "Justice").ID,
                     CourseId = courses.Single(c => c.Title == "Literature").CourseId,
                     Grade = Grade.B         
                  }
@@ -113,7 +113,7 @@ namespace ContosoUniversity.Migrations
             {
                 var enrollmentInDataBase = context.Enrollments.Where(
                     s =>
-                         s.Student.Id == e.StudentId &&
+                         s.Student.ID == e.StudentId &&
                          s.Course.CourseId == e.CourseId).SingleOrDefault();
                 if (enrollmentInDataBase == null)
                 {
